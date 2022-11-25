@@ -1,6 +1,6 @@
 import { ContactPost } from "./postContact"
 
-const header = Headers()
+const header = new Headers()
 const createContact = document.createElement('form')
 const sendForm = async(event) => {
     event.preventDefault()
@@ -11,7 +11,6 @@ const sendForm = async(event) => {
         window.open('#contacts', '_self')
     }
 }
-button.addEventListener
 
 export const NewContact = async () => {
     createContact.innerHTML = (`<input type="text" name="nome" placeholder="Nome do Contato"/>

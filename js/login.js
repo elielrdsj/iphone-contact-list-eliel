@@ -6,6 +6,12 @@ const entrar = async (event) => {
 
     const fd = new FormData(login);
     const response = await AuthPost(fd);
+    const Login = (`<form>
+        <input type="text" name="email" placeholder="Insira seu e-Mail">
+        <input type="password" name="senha" placeholder="*******">
+        <button>Login</button>
+        <p><a href="#" target="_self">Criar conta</a></p>
+    </form>`)
 
     if (response.status === 200) {
         const {token, ...user} = response.data;
@@ -18,6 +24,7 @@ const entrar = async (event) => {
         window.alert("Não abriu!");
         //window.open("#404", "_self");
     }
+    return await Login
 }
 
 const events = () => {

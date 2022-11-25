@@ -15,6 +15,7 @@ function redirectPages() {
 
     if (window.location.hash === "") {
         route = Router["#login"];
+        console.log(Router["#login"])
     }
     else {
         route = Router[window.location.hash] || Router["#404"];

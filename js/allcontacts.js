@@ -3,21 +3,19 @@ import { GetAllContacts } from "./getAllContacts"
 
 const searchContacts = document.createElement('form')
 const displayContacts = document.createElement('ul')
-contact.setAttribute('')
-const header = Headers()
+//contact.setAttribute('')
+const header = new Headers()
 
 
 export const Allcontacts = async () => {
     const contatos = await GetAllContacts
-    searchContacts.innerHTML = (`
-    <form>
-        <input id="search" type="text" name="contact" placeholder="Busque um contato">
-    </form>
-    `)
     const form = document.getElementById(search)
     form.addEventListener('input', searchByName)
     for (contato of contatos){
     displayContacts.innerHTML = (`
+    <form>
+        <input id="search" type="text" name="contact" placeholder="Busque um contato">
+    </form>
     <li>
         <div class="contatos">
             <img src="${contato.imagem}/>
@@ -33,6 +31,7 @@ export const Allcontacts = async () => {
     })
     const id = document.querySelectorAll('#id')
     id.display='none';
+    return displayContacts
 }
 
 
